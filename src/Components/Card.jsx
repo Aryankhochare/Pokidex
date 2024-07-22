@@ -4,7 +4,7 @@ const Card = ({ pokemon, loading, infoPokemon, lastPokemonElementRef }) => {
     const [playingAudio, setPlayingAudio] = useState(null);
 
     const playSound = (id, event) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         if (playingAudio) {
             playingAudio.pause();
             playingAudio.currentTime = 0;
@@ -25,6 +25,13 @@ const Card = ({ pokemon, loading, infoPokemon, lastPokemonElementRef }) => {
                             <h2>{item.id}</h2>
                             <img src={item.sprites.front_default} alt={item.name} />
                             <h2>{item.name}</h2>
+                            <div className="pokemon-types">
+                                {item.types.map(typeInfo => (
+                                    <span key={typeInfo.type.name} className={`type ${typeInfo.type.name}`}>
+                                        {typeInfo.type.name}
+                                    </span>
+                                ))}
+                            </div>
                             <button 
                                 className="sound-button" 
                                 onClick={(e) => playSound(item.id, e)}
