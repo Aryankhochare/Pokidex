@@ -10,6 +10,10 @@ body{
 .Topbar{
     background-color: black;
     position: fixed;
+    display:flex;
+    align-items: center;
+    padding: 5px 5px; 
+    justify-content: space-between;
     width: 100%;
     height: 70px;
     z-index: 1;
@@ -23,6 +27,7 @@ body{
     display:inline;
     color: white;
     text-transform: uppercase;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     left:20%;
 
 }
@@ -35,11 +40,13 @@ body{
 }
 .left-content,.right-content{
     flex-basis: 50%;
+    justify-content: space-between;
+
 }
 .left-content{
     left:10%;
     display: grid;
-    grid-column: 1;
+    grid-column: 3;
     grid-gap:1rem;
 }
 .card{
@@ -48,7 +55,7 @@ body{
     border-radius: 1rem;
     text-decoration-color: white;
     color:white;
-    box-shadow: 0 5px 5px rgba(255, 252, 252, 0.861);
+    box-shadow: 3px 3px 3px rgba(255, 252, 252, 0.861);
     padding: 0 1.5rem;
     display: flex;
     margin-left: 28px;
@@ -56,6 +63,9 @@ body{
     text-transform: capitalize;
     justify-content: space-between;
     box-sizing: border-box;
+}
+.card:hover{
+    transform: translateY(-5px);
 }
 .card h1{
     text-transform: capitalize;
@@ -69,8 +79,8 @@ body{
 }
 
 .right-content{
-    width: 30%;
-    height: 75vh;
+    width: 50%;
+    height: 73vh;
     text-align:center;
     color: rgb(0, 0, 0);
     background-color: #ffffff;
@@ -78,25 +88,30 @@ body{
     border-width: 10px; */
     position: fixed;
     border-radius: 50px;
-    top:80px;
+    top:95px;
     padding:20px;
     bottom: 200px;
-    right: 9%;
+    right:10%;
 }
 .right-content img{
-    margin: 1.5rem;
+    margin: 1rem;
     height: 150px;
 }
 .right-content h1{
     text-transform: uppercase;
-    font-weight: bold;
+    color: black;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
 }
 .base-stat{
     text-transform: uppercase;
+    margin-top: 10px;
     padding-bottom: 10px;
+    text-align: left;
     font-size:small;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    display: inline;
 }
 
 .abilities{
@@ -116,21 +131,100 @@ body{
     text-transform: uppercase;
     border-radius: 8px;
     margin-left: 10px;
+    margin-bottom: 10px;
     bottom: 20px;
 }
  
-.btn-group{
+
+
+/* .Topbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+}*/
+
+.search-container {
+    display: flex;
+    align-items: center;
 }
-.btn-group button{
-    outline: none;
-    border: none;
-    width: 150px;
-    padding: 0.3rem 0;
-    margin: 1rem;
-    font-size: 17px;
+
+.search-input {
+    padding: 8px 12px;
+    margin-right: 50px;
+    border: 5px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
+.base-stat {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.stat-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.stat-name {
+    width: 20%;
+    text-align: right;
+    padding-right: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
     font-weight: bold;
-    color: white;
+}
+
+.stat-value {
+    width: 5%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.stat-bar-container {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
     background-color: #b74555;
-    border-radius: 8px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+
+.card {
+    /* ... existing styles ... */
+    position: relative; /* Add this */
+}
+
+.sound-button {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.sound-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sound-button:focus {
+    outline: none;
 }
